@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #e1d071;
+        }
+        
+        .piano {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 250px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .key {
+            position: relative;
+            width: 30px;
+            border: 1px solid #000;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .white-key {
+            height: 140px;
+            background-color: #fff;
+            border-radius: 0 0 5px 5px;
+            margin-right: -1px;
+        }
+        
+        .black-key {
+            height: 90px;
+            width: 20px;
+            background-color: #000;
+            z-index: 1;
+            margin-left: -13px;
+            margin-top: 0px;
+            margin-bottom: 50px;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .key:hover {
+            opacity: 0.8;
+        }
+        
+        .key {
+            transition: opacity 0.1s ease-in-out;
+        }
+        
+        .white-key {
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .black-key {
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            background-color: #333;
+            color: #fff;
+        }
+        
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            margin: 3px;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        i {
+            border-radius: 4px;
+            background-color: rgba(128, 123, 46, 0.825);
+            padding: 2px;
+            margin: 3px;
+        }
+        
+        footer {
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    $("document").ready(function() {
+        $(".C").mouseenter(function() {
+            var audio = $("#c4")[0];
+            audio.play();
+        });
+
+        $(".C").mouseleave(function() {
+            var audio = $("#c4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".CS").mouseenter(function() {
+            var audio = $("#db4")[0];
+            audio.play();
+        });
+
+        $(".CS").mouseleave(function() {
+            var audio = $("#db4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".D").mouseenter(function() {
+            var audio = $("#d4")[0];
+            audio.play();
+        });
+
+        $(".D").mouseleave(function() {
+            var audio = $("#d4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".DS").mouseenter(function() {
+            var audio = $("#eb4")[0];
+            audio.play();
+        });
+
+        $(".DS").mouseleave(function() {
+            var audio = $("#ed4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".E").mouseenter(function() {
+            var audio = $("#e4")[0];
+            audio.play();
+        });
+
+        $(".E").mouseleave(function() {
+            var audio = $("#e4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".F").mouseenter(function() {
+            var audio = $("#f4")[0];
+            audio.play();
+        });
+
+        $(".F").mouseleave(function() {
+            var audio = $("#f4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".FS").mouseenter(function() {
+            var audio = $("#gb4")[0];
+            audio.play();
+        });
+
+        $(".FS").mouseleave(function() {
+            var audio = $("#gb4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".G").mouseenter(function() {
+            var audio = $("#g4")[0];
+            audio.play();
+        });
+
+        $(".G").mouseleave(function() {
+            var audio = $("#g4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".GS").mouseenter(function() {
+            var audio = $("#ab4")[0];
+            audio.play();
+        });
+
+        $(".GS").mouseleave(function() {
+            var audio = $("#ab4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".A").mouseenter(function() {
+            var audio = $("#a4")[0];
+            audio.play();
+        });
+
+        $(".A").mouseleave(function() {
+            var audio = $("#a4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".AS").mouseenter(function() {
+            var audio = $("#bb4")[0];
+            audio.play();
+        });
+
+        $(".AS").mouseleave(function() {
+            var audio = $("#bb4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".B").mouseenter(function() {
+            var audio = $("#b4")[0];
+            audio.play();
+        });
+
+        $(".B").mouseleave(function() {
+            var audio = $("#b4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".C1").mouseenter(function() {
+            var audio = $("#c5")[0];
+            audio.play();
+        });
+
+        $(".C1").mouseleave(function() {
+            var audio = $("#c5")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".CS1").mouseenter(function() {
+            var audio = $("#db5")[0];
+            audio.play();
+        });
+
+        $(".CS1").mouseleave(function() {
+            var audio = $("#db4")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".D1").mouseenter(function() {
+            var audio = $("#d5")[0];
+            audio.play();
+        });
+
+        $(".D1").mouseleave(function() {
+            var audio = $("#d5")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".DS1").mouseenter(function() {
+            var audio = $("#eb5")[0];
+            audio.play();
+        });
+
+        $(".DS1").mouseleave(function() {
+            var audio = $("#eb5")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".E1").mouseenter(function() {
+            var audio = $("#e5")[0];
+            audio.play();
+        });
+
+        $(".E1").mouseleave(function() {
+            var audio = $("#e5")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        $(".F1").mouseenter(function() {
+            var audio = $("#f5")[0];
+            audio.play();
+        });
+
+        $(".F1").mouseleave(function() {
+            var audio = $("#f5")[0];
+            audio.currentTime = 0;
+            audio.pause();
+        });
+
+        let currentlyPlaying = null;
+
+        document.addEventListener('keydown', (event) => {
+            let audioFile = null;
+            switch (event.key) {
+                case 'a':
+                    $(".C").css("opacity", 0.8);
+                    audioFile = $("#c4")[0];
+
+                    break;
+
+
+                case 'w':
+                    audioFile = $("#db4")[0];
+                    break;
+                case 's':
+                    audioFile = $("#d4")[0];
+                    break;
+                case 'e':
+                    audioFile = $("#eb4")[0];
+                    break;
+                case 'd':
+                    audioFile = $("#e4")[0];
+                    break;
+                case 'f':
+                    audioFile = $("#f4")[0];
+                    break;
+                case 't':
+                    audioFile = $("#gb4")[0];
+                    break;
+                case 'g':
+                    audioFile = $("#g4")[0];
+                    break;
+                case 'y':
+                    audioFile = $("#ab4")[0];
+                    break;
+                case 'h':
+                    audioFile = $("#a4")[0];
+                    break;
+                case 'u':
+                    audioFile = $("#bb4")[0];
+                    break;
+                case 'j':
+                    audioFile = $("#b4")[0];
+                    break;
+                case 'k':
+                    audioFile = $("#c5")[0];
+                    break;
+                case 'o':
+                    audioFile = $("#db5")[0];
+                    break;
+                case 'l':
+                    audioFile = $("#d5")[0];
+                    break;
+                case 'p':
+                    audioFile = $("#eb5")[0];
+                    break;
+                default:
+                    return;
+            }
+
+            if (currentlyPlaying) {
+                currentlyPlaying.pause();
+                currentlyPlaying.currentTime = 0;
+            }
+
+            audioFile.play();
+            currentlyPlaying = audioFile;
+        });
+        // addEventListener("keypress", (a) => {
+        //     var audio = $("#c4")[0];
+        //     audio.play();
+        // })
+
+        // addEventListener("keypress", (w) => {
+        //     var audio = $("#db4")[0];
+        //     audio.play();
+        // })
+
+        // addEventListener("keypress", (s) => {
+        //     var audio = $("#d4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (e) => {
+        //     var audio = $("#eb4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (d) => {
+        //     var audio = $("#e4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (f) => {
+        //     var audio = $("#f4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (t) => {
+        //     var audio = $("#gb4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (g) => {
+        //     var audio = $("#g4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (y) => {
+        //     var audio = $("#ab4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (h) => {
+        //     var audio = $("#a4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (u) => {
+        //     var audio = $("#bb4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (j) => {
+        //     var audio = $("#b4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (k) => {
+        //     var audio = $("#c5")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (o) => {
+        //     var audio = $("#db5")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (l) => {
+        //     var audio = $("#d5")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (p) => {
+        //         var audio = $("#eb5")[0];
+        //         audio.play();
+        //     })
+        // addEventListener("keypress", (;) => {
+        //     var audio = $("#c4")[0];
+        //     audio.play();
+        // })
+        // addEventListener("keypress", (') => {
+        //     var audio = $("#c4")[0];
+        //     audio.play();
+        // })
+
+    });
+</script>
+
+<body>
+    <div class="piano">
+        <div class="key white-key C"></div>
+        <div class="key black-key CS"></div>
+        <div class="key white-key D"></div>
+        <div class="key black-key DS"></div>
+        <div class="key white-key E"></div>
+        <div class="key white-key F"></div>
+        <div class="key black-key FS"></div>
+        <div class="key white-key G"></div>
+        <div class="key black-key GS"></div>
+        <div class="key white-key A"></div>
+        <div class="key black-key AS"></div>
+        <div class="key white-key B"></div>
+        <div class="key white-key C1"></div>
+        <div class="key black-key CS1"></div>
+        <div class="key white-key D1"></div>
+        <div class="key black-key DS1"></div>
+        <div class="key white-key E1"></div>
+        <div class="key white-key F1"></div>
+        <audio src="KeyboardExportKHV//C4.mp3" id="c4"></audio>
+        <audio src="KeyboardExportKHV//Db4.mp3" id="db4"></audio>
+        <audio src="KeyboardExportKHV//D4.mp3" id="d4"></audio>
+        <audio src="KeyboardExportKHV//Eb4.mp3" id="eb4"></audio>
+        <audio src="KeyboardExportKHV//E4.mp3" id="e4"></audio>
+        <audio src="KeyboardExportKHV//F4.mp3" id="f4"></audio>
+        <audio src="KeyboardExportKHV//Gb4.mp3" id="gb4"></audio>
+        <audio src="KeyboardExportKHV//G4.mp3" id="g4"></audio>
+        <audio src="KeyboardExportKHV//Ab4.mp3" id="ab4"></audio>
+        <audio src="KeyboardExportKHV//A4.mp3" id="a4"></audio>
+        <audio src="KeyboardExportKHV//Bb4.mp3" id="bb4"></audio>
+        <audio src="KeyboardExportKHV//B4.mp3" id="b4"></audio>
+        <audio src="KeyboardExportKHV//C5.mp3" id="c5"></audio>
+        <audio src="KeyboardExportKHV//Db5.mp3" id="db5"></audio>
+        <audio src="KeyboardExportKHV//D5.mp3" id="d5"></audio>
+        <audio src="KeyboardExportKHV//Eb5.mp3" id="eb5"></audio>
+        <audio src="KeyboardExportKHV/E5.mp3" id="e5"></audio>
+        <audio src="KeyboardExportKHV/F5.mp3" id="f5"></audio>
+    </div>
+    <div>
+        <h3><b><i> Reference of PC-keys to Piano-tone [ Western C-Scale] ♬ 🎹</i></b></h3>
+        <ul>
+            <li>A = C</li>
+            <li>W = Db</li>
+            <li>S = D</li>
+            <li>E = Eb</li>
+            <li>D = E</li>
+            <li>F = F</li>
+            <li>T = Gb</li>
+            <li>G = G</li>
+            <li>Y = Ab</li>
+            <li>H = A</li>
+            <li>U = Bb</li>
+            <li>J = B</li>
+            <li>K = C</li>
+            <li>O = Db</li>
+            <li>L = D</li>
+            <li>P = Eb</li>
+        </ul>
+        <br>
+        <h3><b><i> Reference of PC-keys to Piano-tone [ Classic SA-scale] ♬ 🎹</i></b></h3>
+        <ul>
+            <li>A = sa</li>
+            <li>W = re-1</li>
+            <li>S = re-2</li>
+            <li>E = ga-1</li>
+            <li>D = ga-2</li>
+            <li>F = ma-1</li>
+            <li>T = ma-2</li>
+            <li>G = pa</li>
+            <li>Y = da-1</li>
+            <li>H = da-2</li>
+            <li>U = ni-1</li>
+            <li>J = ni-2</li>
+            <li>K = py-sa</li>
+            <li>O = py-re-1</li>
+            <li>L = py-re-2</li>
+            <li>P = py-ga-1</li>
+        </ul>
+    </div>
+    <hr>
+    <footer>
+        <p>&copy; 2023 <b><i>Harshavardhan.K</i></b> All rights reserved</p>
+    </footer>
+    <hr>
+</body>
+
+</html>
