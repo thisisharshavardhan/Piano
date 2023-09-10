@@ -3,4 +3,6 @@ This is Piano is made for fun.
 
 [=] This piano works only on pc
 
-[=] You also need to download all audio files to make this thing work
+This piano sounds the same as the original one does.
+
+NOTE: This is for fun to use, not reccommended for actual use.
